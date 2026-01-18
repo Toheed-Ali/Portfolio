@@ -9,7 +9,7 @@
 
 body {
     height: 100vh;
-    background: url("images/background.jpg") no-repeat center / cover;
+    background: url("images/black.jpg") no-repeat center / cover;
     padding: 40px 3%;
 }
 
@@ -265,7 +265,9 @@ header {
     font-weight: 500;
 }
 
-.edu-images1, .edu-images2, .edu-images3 {
+.edu-images1,
+.edu-images2,
+.edu-images3 {
     margin-top: 39px;
     position: absolute;
     z-index: 1;
@@ -335,11 +337,22 @@ header {
 .skills-track {
     display: flex;
     width: max-content;
-    animation: scrollSkills 30s linear infinite;
+    animation: scrollSkills 20s linear infinite;
     gap: 20px;
 }
 
 .skills-track:hover {
+    animation-play-state: paused;
+}
+
+.projects-track {
+    display: flex;
+    width: max-content;
+    animation: scrollSkills 20s linear infinite;
+    gap: 20px;
+}
+
+.projects-track:hover {
     animation-play-state: paused;
 }
 
@@ -388,6 +401,7 @@ header {
     0% {
         transform: translateX(0);
     }
+
     100% {
         transform: translateX(-50%);
     }
@@ -397,7 +411,7 @@ header {
     .skills-marquee {
         max-width: 960px;
     }
-    
+
     .skill-box {
         width: 220px;
         height: 220px;
@@ -430,12 +444,12 @@ header {
         font-size: 50px;
         margin-bottom: 10px;
     }
-    
+
     .skill-box h2 {
         font-size: 20px;
         margin-bottom: 8px;
     }
-    
+
     .skill-box p {
         font-size: 13px;
     }
@@ -445,15 +459,15 @@ header {
     .skills-section {
         padding: 80px 5% 40px;
     }
-    
+
     .skills-title {
         font-size: 28px;
     }
-    
+
     .skills-marquee {
         max-width: 200px;
     }
-    
+
     .skill-box {
         width: 160px;
         height: 180px;
@@ -532,6 +546,67 @@ header {
     padding: 10px;
     box-sizing: border-box;
     text-align: center;
+    transition: opacity 0.4s ease;
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(60, 60, 60, 0.95);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    box-sizing: border-box;
+}
+
+.project-box:hover .project-overlay {
+    opacity: 0.9;
+    visibility: visible;
+}
+
+.project-box:hover h2 {
+    opacity: 0;
+}
+
+.project-overlay p {
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.github-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 24px;
+    background: #ffffff;
+    color: #000000;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+}
+
+.github-btn:hover {
+    background: #f0f0f0;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
+}
+
+.github-btn i {
+    font-size: 18px;
 }
 
 .contact-right input,
